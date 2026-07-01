@@ -45,6 +45,14 @@ export default function App() {
               }
             />
             <Route
+              path="/search"
+              element={
+                <ProtectedRoute>
+                  <ProductList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
               path="/products/:id"
               element={
                 <ProtectedRoute>

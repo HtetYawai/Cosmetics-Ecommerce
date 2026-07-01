@@ -6,13 +6,24 @@ import {
   useCallback,
   type ReactNode,
 } from 'react'
-import { defaultUser } from '../data'
+
 import type { User } from '../types'
-import { STORAGE_KEYS, getStorageItem, setStorageItem, removeStorageItem } from '../utils/storage'
+import users from '../data/users.json'
+
+import {
+  STORAGE_KEYS,
+  getStorageItem,
+  setStorageItem,
+  removeStorageItem,
+} from '../utils/storage'
+
+interface MockUser extends User {
+  password: string
+}
 
 interface AuthContextType {
   isAuthenticated: boolean
-  user: User | null
+  user: User |null
   login: (email: string, password: string) => boolean
   logout: () => void
   updateUser: (updates: Partial<User>) => void
@@ -24,6 +35,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(() =>
     getStorageItem(STORAGE_KEYS.AUTH, false)
   )
+
   const [user, setUser] = useState<User | null>(() =>
     getStorageItem<User | null>(STORAGE_KEYS.USER, null)
   )
@@ -33,37 +45,79 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [isAuthenticated])
 
   useEffect(() => {
-    if (user) setStorageItem(STORAGE_KEYS.USER, user)
+    if (user) {
+      setStorageItem(STORAGE_KEYS.USER, user)
+    } else {
+      removeStorageItem(STORAGE_KEYS.USER)
+    }
   }, [user])
 
-  const login = useCallback((email: string, _password: string) => {
-    if (email.trim()) {
-      const storedUser = getStorageItem<User | null>(STORAGE_KEYS.USER, null)
-      setUser(storedUser ?? { ...defaultUser, email })
-      setIsAuthenticated(true)
-      return true
+  const login = useCallback((email: string, password: string) => {
+    const foundUser = (users as MockUser[]).find(
+      (u) =>
+        u.email.toLowerCase() === email.toLowerCase() &&
+        u.password === password
+    )
+
+    if (!foundUser) {
+      return false
     }
-    return false
+
+    const { password: _, ...currentUser } = foundUser
+
+    setUser(currentUser)
+    setIsAuthenticated(true)
+
+    setStorageItem(STORAGE_KEYS.USER, currentUser)
+    setStorageItem(STORAGE_KEYS.AUTH, true)
+
+    return true
   }, [])
 
   const logout = useCallback(() => {
+    setUser(null)
     setIsAuthenticated(false)
+
+    removeStorageItem(STORAGE_KEYS.USER)
     removeStorageItem(STORAGE_KEYS.AUTH)
   }, [])
 
   const updateUser = useCallback((updates: Partial<User>) => {
-    setUser((prev) => (prev ? { ...prev, ...updates } : null))
+    setUser((prev) => {
+      if (!prev) return null
+
+      const updated = {
+        ...prev,
+        ...updates,
+      }
+
+      setStorageItem(STORAGE_KEYS.USER, updated)
+
+      return updated
+    })
   }, [])
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, updateUser }}>
+    <AuthContext.Provider
+      value={{
+        isAuthenticated,
+        user,
+        login,
+        logout,
+        updateUser,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   )
 }
 
 export function useAuth() {
-  const ctx = useContext(AuthContext)
-  if (!ctx) throw new Error('useAuth must be used within AuthProvider')
-  return ctx
+  const context = useContext(AuthContext)
+
+  if (!context) {
+    throw new Error('useAuth must be used within AuthProvider')
+  }
+
+  return context
 }

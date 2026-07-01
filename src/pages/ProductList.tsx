@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useEffect, useMemo, useState } from 'react'
+import { useParams, useSearchParams } from 'react-router-dom'
 import { Search, SlidersHorizontal, ShoppingBag } from 'lucide-react'
 import AppLayout from '../components/AppLayout'
 import PageHeader from '../components/PageHeader'
@@ -10,14 +10,21 @@ type SortOption = 'popularity' | 'price-low' | 'price-high' | 'rating'
 
 export default function ProductList() {
   const { slug } = useParams<{ slug: string }>()
+  const [searchParams, setSearchParams] = useSearchParams()
   const category = getCategoryBySlug(slug ?? '')
-  const [search, setSearch] = useState('')
+  const query = searchParams.get('q') ?? ''
+  const [search, setSearch] = useState(query)
   const [sort, setSort] = useState<SortOption>('popularity')
+  const isSearchPage = !slug
+
+  useEffect(() => {
+    setSearch(query)
+  }, [query])
 
   const products = useMemo(() => {
     let list = category
-      ? search ? searchProducts(search, category.id) : getProductsByCategory(category.id)
-      : []
+      ? search.trim() ? searchProducts(search, category.id) : getProductsByCategory(category.id)
+      : searchProducts(search)
 
     switch (sort) {
       case 'price-low':
@@ -35,7 +42,12 @@ export default function ProductList() {
     return list
   }, [category, search, sort])
 
-  if (!category) {
+  const handleSearchChange = (value: string) => {
+    setSearch(value)
+    setSearchParams(value.trim() ? { q: value } : {}, { replace: true })
+  }
+
+  if (!category && !isSearchPage) {
     return (
       <AppLayout>
         <div className="flex h-64 items-center justify-center text-gray-500">Category not found</div>
@@ -46,8 +58,8 @@ export default function ProductList() {
   return (
     <AppLayout>
       <PageHeader
-        title={category.name}
-        subtitle="Find your perfect makeup match"
+        title={category?.name ?? 'Search'}
+        subtitle={category ? 'Find your perfect makeup match' : 'Browse all beauty products'}
       />
 
       <div className="space-y-3 px-4 pb-4">
@@ -55,9 +67,9 @@ export default function ProductList() {
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
-            placeholder={`Search in ${category.name}`}
+            placeholder={category ? `Search in ${category.name}` : 'Search products, brands...'}
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => handleSearchChange(e.target.value)}
             className="w-full rounded-xl bg-gray-50 py-3 pl-10 pr-10 text-sm outline-none ring-1 ring-gray-100 focus:ring-brand/30"
           />
           <SlidersHorizontal className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />

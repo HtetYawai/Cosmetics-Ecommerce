@@ -1,11 +1,20 @@
-import { Link } from 'react-router-dom'
+import { useState, type FormEvent } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { Search, Sparkles, ChevronRight, Tag } from 'lucide-react'
 import AppLayout from '../components/AppLayout'
 import ProductCard from '../components/ProductCard'
 import { categories, getFeaturedProducts } from '../data'
 
 export default function Home() {
+  const navigate = useNavigate()
+  const [search, setSearch] = useState('')
   const featured = getFeaturedProducts()
+
+  const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const query = search.trim()
+    navigate(query ? `/search?q=${encodeURIComponent(query)}` : '/search')
+  }
 
   return (
     <AppLayout>
@@ -20,14 +29,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative">
+        <form className="relative" onSubmit={handleSearchSubmit}>
           <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
             placeholder="Search products, brands..."
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
             className="w-full rounded-2xl bg-white py-3.5 pl-12 pr-4 text-sm shadow-sm outline-none ring-1 ring-gray-100"
           />
-        </div>
+        </form>
       </div>
 
       <section className="px-4 py-4">

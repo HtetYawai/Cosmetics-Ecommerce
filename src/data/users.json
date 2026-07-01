@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "fullName": "Khin Yadanar Kyaw",
+    "email": "khin@gmail.com",
+    "password": "1234",
+    "phone": "+66 95 123 4567",
+    "avatar": "/images/users/khin.jpg",
+    "badge": "Beauty Lover"
+  },
+  {
+    "id": "2",
+    "fullName": "Jennie",
+    "email": "jennie@gmail.com",
+    "password": "1234",
+    "phone": "+66 81 234 5678",
+    "avatar": "/images/users/jennie.jpg",
+    "badge": "Skincare Lover"
+  },
+  {
+    "id": "3",
+    "fullName": "Suzy Bae",
+    "email": "suzy@gmail.com",
+    "password": "1234",
+    "phone": "+66 89 345 6789",
+    "avatar": "/images/users/suzy.jpg",
+    "badge": "Premium Member"
+  }
+]

@@ -1,8 +1,20 @@
 {
   "name": "glowup-beauty",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "A responsive cosmetics e-commerce frontend built with React, Vite, TypeScript, and Tailwind CSS.",
+  "homepage": "https://github.com/HtetYawai/Cosmetics-Ecommerce#readme",
+  "bugs": {
+    "url": "https://github.com/HtetYawai/Cosmetics-Ecommerce/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HtetYawai/Cosmetics-Ecommerce.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -6,7 +6,7 @@
     "description": "Discover lipsticks, foundations, and more to enhance your natural beauty.",
     "icon": "lipstick",
     "productCount": 124,
-    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop"
+    "image": "/images/categories/makeup.jpg"
   },
   {
     "id": "cat-skincare",
@@ -15,7 +15,7 @@
     "description": "Nourish your skin with serums, moisturizers, and treatments.",
     "icon": "bottle",
     "productCount": 98,
-    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop"
+    "image": "/images/categories/skincare.jpg"
   },
   {
     "id": "cat-haircare",
@@ -24,7 +24,7 @@
     "description": "Shampoos, conditioners, and treatments for healthy, shiny hair.",
     "icon": "brush",
     "productCount": 76,
-    "image": "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400&h=300&fit=crop"
+    "image": "/images/categories/haircare.jpg"
   },
   {
     "id": "cat-fragrance",
@@ -33,7 +33,7 @@
     "description": "Elegant perfumes and body mists to express your unique style.",
     "icon": "perfume",
     "productCount": 54,
-    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&h=300&fit=crop"
+    "image": "/images/categories/fragrance.jpg"
   },
   {
     "id": "cat-bodycare",
@@ -42,6 +42,6 @@
     "description": "Lotions, scrubs, and body treatments for silky smooth skin.",
     "icon": "lotion",
     "productCount": 62,
-    "image": "https://images.unsplash.com/photo-1608248543809-3c3d4f4e0a0a?w=400&h=300&fit=crop"
+    "image": "/images/categories/bodycare.jpg"
   }
 ]

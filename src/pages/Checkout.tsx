@@ -18,14 +18,16 @@ import Stepper from '../components/Stepper'
 import { addresses, deliveryOptions } from '../data'
 import { useCart } from '../contexts/CartContext'
 import { formatPrice } from '../utils/format'
-import type { PaymentMethod } from '../types'
+import { getStorageItem, setStorageItem, STORAGE_KEYS } from '../utils/storage'
+import type { Address, Order, PaymentMethod } from '../types'
 
 export default function Checkout() {
   const navigate = useNavigate()
   const { items, itemCount, subtotal, discount, clearCart } = useCart()
+  const savedAddresses = getStorageItem<Address[]>(STORAGE_KEYS.ADDRESSES, addresses)
   const [step, setStep] = useState<'checkout' | 'payment' | 'confirmation'>('checkout')
   const [selectedAddress, setSelectedAddress] = useState(
-    addresses.find((a) => a.isDefault)?.id ?? addresses[0]?.id
+    savedAddresses.find((a) => a.isDefault)?.id ?? savedAddresses[0]?.id
   )
   const [selectedDelivery, setSelectedDelivery] = useState(deliveryOptions[0]?.id)
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('card')
@@ -37,6 +39,32 @@ export default function Checkout() {
   const total = subtotal + shipping - discount
 
   const handleConfirmPayment = () => {
+    const now = new Date()
+    const savedOrders = getStorageItem<Order[]>(STORAGE_KEYS.ORDERS, [])
+    const order: Order = {
+      id: `ORD-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(
+        now.getDate()
+      ).padStart(2, '0')}-${String(now.getTime()).slice(-5)}`,
+      date: now.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+      }),
+      time: now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
+      status: 'Processing',
+      total,
+      itemCount,
+      items: items.map((item) => ({
+        productId: item.productId,
+        quantity: item.quantity,
+      })),
+      image: items[0]?.product.image ?? '',
+    }
+
+    setStorageItem(STORAGE_KEYS.ORDERS, [order, ...savedOrders])
     setStep('confirmation')
     setTimeout(() => {
       clearCart()
@@ -95,7 +123,7 @@ export default function Checkout() {
                 <h3 className="font-semibold">Shipping Address</h3>
               </div>
               <div className="space-y-2">
-                {addresses.map((addr) => (
+                {savedAddresses.map((addr) => (
                   <button
                     key={addr.id}
                     onClick={() => setSelectedAddress(addr.id)}

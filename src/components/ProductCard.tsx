@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { Heart, Plus } from 'lucide-react'
 import type { Product } from '../types'
 import { formatPrice } from '../utils/format'
 import StarRating from './StarRating'
 import { useCart } from '../contexts/CartContext'
+import { getStorageItem, setStorageItem, STORAGE_KEYS } from '../utils/storage'
 
 interface ProductCardProps {
   product: Product
@@ -12,11 +14,24 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, showAddButton = true }: ProductCardProps) {
   const { addItem } = useCart()
+  const [isWishlisted, setIsWishlisted] = useState(() =>
+    getStorageItem<string[]>(STORAGE_KEYS.WISHLIST, []).includes(product.id)
+  )
 
   const badgeColors = {
     'Best Seller': 'bg-brand text-white',
     New: 'bg-pink-200 text-brand',
     Sale: 'bg-orange-400 text-white',
+  }
+
+  const toggleWishlist = () => {
+    const savedIds = getStorageItem<string[]>(STORAGE_KEYS.WISHLIST, [])
+    const nextIds = savedIds.includes(product.id)
+      ? savedIds.filter((id) => id !== product.id)
+      : [product.id, ...savedIds]
+
+    setStorageItem(STORAGE_KEYS.WISHLIST, nextIds)
+    setIsWishlisted(nextIds.includes(product.id))
   }
 
   return (
@@ -37,11 +52,16 @@ export default function ProductCard({ product, showAddButton = true }: ProductCa
             </span>
           )}
           <button
-            onClick={(e) => e.preventDefault()}
-            className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-gray-400 backdrop-blur-sm transition hover:text-brand"
-            aria-label="Add to wishlist"
+            onClick={(e) => {
+              e.preventDefault()
+              toggleWishlist()
+            }}
+            className={`absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm transition hover:text-brand ${
+              isWishlisted ? 'text-brand' : 'text-gray-400'
+            }`}
+            aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
           >
-            <Heart className="h-4 w-4" />
+            <Heart className={`h-4 w-4 ${isWishlisted ? 'fill-current' : ''}`} />
           </button>
         </div>
         <div className="p-3">

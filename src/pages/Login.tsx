@@ -15,20 +15,28 @@ export default function Login() {
   const from = (location.state as { from?: { pathname: string } })?.from?.pathname ?? '/home'
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
-    if (!email.trim()) {
-      setError('Please enter your email')
-      return
-    }
-    if (password.length < 4) {
-      setError('Password must be at least 4 characters')
-      return
-    }
-    if (login(email, password)) {
-      navigate(from, { replace: true })
-    }
+  e.preventDefault()
+
+  setError('')
+
+  if (!email.trim()) {
+    setError('Please enter your email')
+    return
   }
+
+  if (!password.trim()) {
+    setError('Please enter your password')
+    return
+  }
+
+  const success = login(email, password)
+
+  if (success) {
+    navigate(from, { replace: true })
+  } else {
+    setError('Invalid email or password')
+  }
+}
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-pink-50 to-pink-100 px-4 py-8">

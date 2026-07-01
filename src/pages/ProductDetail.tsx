@@ -7,6 +7,7 @@ import StarRating from '../components/StarRating'
 import { getProductById } from '../data'
 import { formatPrice } from '../utils/format'
 import { useCart } from '../contexts/CartContext'
+import { getStorageItem, setStorageItem, STORAGE_KEYS } from '../utils/storage'
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>()
@@ -18,6 +19,9 @@ export default function ProductDetail() {
   const [selectedShade, setSelectedShade] = useState(product?.shades?.[0])
   const [selectedSize, setSelectedSize] = useState(product?.sizes?.[0])
   const [added, setAdded] = useState(false)
+  const [isWishlisted, setIsWishlisted] = useState(() =>
+    getStorageItem<string[]>(STORAGE_KEYS.WISHLIST, []).includes(id ?? '')
+  )
 
   if (!product) {
     return (
@@ -31,6 +35,16 @@ export default function ProductDetail() {
     addItem(product.id, quantity, { shade: selectedShade, size: selectedSize })
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
+  }
+
+  const toggleWishlist = () => {
+    const savedIds = getStorageItem<string[]>(STORAGE_KEYS.WISHLIST, [])
+    const nextIds = savedIds.includes(product.id)
+      ? savedIds.filter((savedId) => savedId !== product.id)
+      : [product.id, ...savedIds]
+
+    setStorageItem(STORAGE_KEYS.WISHLIST, nextIds)
+    setIsWishlisted(nextIds.includes(product.id))
   }
 
   return (
@@ -49,8 +63,15 @@ export default function ProductDetail() {
               {product.badge}
             </span>
           )}
-          <button className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-gray-400 backdrop-blur-sm">
-            <Heart className="h-5 w-5" />
+          <button
+            type="button"
+            onClick={toggleWishlist}
+            className={`absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm ${
+              isWishlisted ? 'text-brand' : 'text-gray-400'
+            }`}
+            aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
+          >
+            <Heart className={`h-5 w-5 ${isWishlisted ? 'fill-current' : ''}`} />
           </button>
         </div>
 

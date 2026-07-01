@@ -2,15 +2,17 @@
   {
     "id": "prod-1",
     "categoryId": "cat-makeup",
-    "name": "GlowUp Velvet Lipstick",
+    "name": "Romand Velvet Lipstick",
     "subtitle": "#Coral Crush",
     "description": "A luxurious velvet-finish lipstick with rich, long-lasting color. Infused with nourishing oils for a comfortable, non-drying wear.",
     "price": 450,
     "originalPrice": 590,
-    "image": "https://images.unsplash.com/photo-1586495777744-4413f210eafc?w=400&h=400&fit=crop",
+    "image": "/public/images/products/makeup/Romand_1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1586495777744-4413f210eafc?w=600&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1630544067507-1c2f8a4a2b0b?w=600&h=600&fit=crop"
+      "/images/products/makeup/Romand_1.jpg",
+      "/images/products/makeup/Romand_2.jpg",
+      "/images/products/makeup/Romand_3.jpg"
+
     ],
     "rating": 4.8,
     "reviewCount": 132,
@@ -21,13 +23,13 @@
   {
     "id": "prod-2",
     "categoryId": "cat-makeup",
-    "name": "GlowUp Bloom Eyeshadow Palette",
+    "name": "Nars Makeup",
     "subtitle": "12 Warm Tones",
     "description": "A stunning 12-shade palette featuring warm, blendable colors perfect for everyday looks and special occasions.",
     "price": 790,
-    "image": "https://images.unsplash.com/photo-1512496016851-a16e428a3e3e?w=400&h=400&fit=crop",
+    "image": "/images/products/makeup/NARS_makeup.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1512496016851-a16e428a3e3e?w=600&h=600&fit=crop"
+      "/images/products/makeup/NARS_makeup.jpg"
     ],
     "rating": 4.9,
     "reviewCount": 89,
@@ -36,32 +38,31 @@
   },
   {
     "id": "prod-3",
-    "categoryId": "cat-makeup",
-    "name": "GlowUp Flawless Foundation",
-    "subtitle": "Medium Coverage",
-    "description": "Buildable medium coverage foundation with a natural satin finish. Available in 24 inclusive shades.",
-    "price": 680,
-    "originalPrice": 850,
-    "image": "https://images.unsplash.com/photo-1631214524020-7e1470a4b881?w=400&h=400&fit=crop",
+    "categoryId": "cat-fragrance",
+    "name": "Chanel EDP",
+    "subtitle": "N5",
+    "description": "A luxurious perfume with rich, long-lasting smell.",
+    "price": 5000,
+    "originalPrice": 6000,
+    "image": "/images/products/fragrance/Perfume_1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1631214524020-7e1470a4b881?w=600&h=600&fit=crop"
+      "/images/products/fragrance/Perfume_1.jpg"
     ],
     "rating": 4.7,
     "reviewCount": 215,
     "badge": "Sale",
-    "inStock": true,
-    "shades": ["Ivory", "Beige", "Sand", "Honey", "Caramel", "Espresso"]
+    "inStock": true
   },
   {
     "id": "prod-4",
     "categoryId": "cat-makeup",
-    "name": "GlowUp Lash Volume Mascara",
-    "subtitle": "Waterproof Black",
+    "name": "Maybelline Lipstick",
+    "subtitle": "Waterproof",
     "description": "Dramatic volume and length without clumping. Smudge-proof formula that lasts all day.",
     "price": 390,
-    "image": "https://images.unsplash.com/photo-1631730486572-4d6d0f3a2a0b?w=400&h=400&fit=crop",
+    "image": "/images/products/makeup/Maybelline.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1631730486572-4d6d0f3a2a0b?w=600&h=600&fit=crop"
+      "/images/products/makeup/Maybelline.jpg"
     ],
     "rating": 4.6,
     "reviewCount": 178,
@@ -70,13 +71,13 @@
   {
     "id": "prod-5",
     "categoryId": "cat-makeup",
-    "name": "GlowUp Blush Duo",
+    "name": "Blush Colorgram",
     "subtitle": "Peach & Rose",
     "description": "Silky powder blush duo with a natural flush of color. Buildable and blendable formula.",
     "price": 520,
-    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop",
+    "image": "/images/products/makeup/blush.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&h=600&fit=crop"
+      "/images/products/makeup/blush.jpg"
     ],
     "rating": 4.5,
     "reviewCount": 94,
@@ -86,13 +87,13 @@
   {
     "id": "prod-6",
     "categoryId": "cat-makeup",
-    "name": "GlowUp Setting Spray",
+    "name": "YSL Lipstick",
     "subtitle": "All Day Hold",
-    "description": "Fine mist setting spray that locks makeup in place for up to 16 hours.",
+    "description": "A luxurious lipstick with rich, long-lasting color. Infused with nourishing oils for a comfortable, non-drying wear.",
     "price": 420,
-    "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop",
+    "image": "/images/products/makeup/YSL_lipstick.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&h=600&fit=crop"
+      "/images/products/makeup/YSL_lipstick.jpg"
     ],
     "rating": 4.4,
     "reviewCount": 67,
@@ -102,13 +103,13 @@
   {
     "id": "prod-7",
     "categoryId": "cat-skincare",
-    "name": "GlowUp Hydra Glow Serum",
+    "name": "Ordinary Peeling Solution",
     "subtitle": "30ml",
-    "description": "Intensive hydrating serum with hyaluronic acid and vitamin C for radiant, plump skin.",
-    "price": 890,
-    "image": "https://images.unsplash.com/photo-1620916565420-3740845100b6?w=400&h=400&fit=crop",
+    "description": "Peeling serum.",
+    "price": 650,
+    "image": "/images/products/skincare/skincare_1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1620916565420-3740845100b6?w=600&h=600&fit=crop"
+      "/images/products/skincare/skincare_1.jpg"
     ],
     "rating": 4.9,
     "reviewCount": 256,
@@ -119,13 +120,13 @@
   {
     "id": "prod-8",
     "categoryId": "cat-skincare",
-    "name": "GlowUp Sun Shield SPF 50+",
-    "subtitle": "50ml",
-    "description": "Lightweight, non-greasy sunscreen with broad spectrum SPF 50+ protection.",
+    "name": "Medicube Toner",
+    "subtitle": "150ml",
+    "description": "Lightweight toner.",
     "price": 590,
-    "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
+    "image": "/images/products/skincare/skincare_3.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=600&fit=crop"
+      "/images/products/skincare/skincare_3.jpg"
     ],
     "rating": 4.8,
     "reviewCount": 189,
@@ -135,14 +136,14 @@
   {
     "id": "prod-9",
     "categoryId": "cat-skincare",
-    "name": "GlowUp Night Repair Cream",
-    "subtitle": "50ml",
-    "description": "Rich overnight cream with retinol and peptides to repair and rejuvenate skin while you sleep.",
-    "price": 950,
-    "originalPrice": 1200,
-    "image": "https://images.unsplash.com/photo-1617897903246-3b5a049e5a8e?w=400&h=400&fit=crop",
+    "name": "Medicube Cream",
+    "subtitle": "55g",
+    "description": "TXA Niaceinamide Capsule Cream",
+    "price": 550,
+    "originalPrice": 600,
+    "image": "/images/products/skincare/skincare_4.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1617897903246-3b5a049e5a8e?w=600&h=600&fit=crop"
+      "/images/products/skincare/skincare_4.jpg"
     ],
     "rating": 4.7,
     "reviewCount": 143,
@@ -152,13 +153,13 @@
   {
     "id": "prod-10",
     "categoryId": "cat-skincare",
-    "name": "GlowUp Gentle Cleanser",
-    "subtitle": "150ml",
-    "description": "pH-balanced gel cleanser that removes impurities without stripping natural moisture.",
+    "name": "Anua Toner",
+    "subtitle": "250ml",
+    "description": "Anua peach 77 Niacin Essence Toner",
     "price": 480,
-    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+    "image": "/images/products/skincare/skincare_5.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=600&fit=crop"
+      "/images/products/skincare/skincare_5.jpg"
     ],
     "rating": 4.6,
     "reviewCount": 201,
@@ -167,13 +168,13 @@
   {
     "id": "prod-11",
     "categoryId": "cat-haircare",
-    "name": "GlowUp Silk Repair Shampoo",
+    "name": "Loreal Serum",
     "subtitle": "250ml",
-    "description": "Sulfate-free shampoo with keratin and argan oil for silky, manageable hair.",
-    "price": 380,
-    "image": "https://images.unsplash.com/photo-1535585209827-a15fc090454a?w=400&h=400&fit=crop",
+    "description": "Midnight Serum with Precious Camelia Oil.",
+    "price": 470,
+    "image": "/images/products/haircare/Hair_serum_1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1535585209827-a15fc090454a?w=600&h=600&fit=crop"
+      "/images/products/haircare/Hair_serum_1.jpg"
     ],
     "rating": 4.5,
     "reviewCount": 112,
@@ -181,34 +182,98 @@
   },
   {
     "id": "prod-12",
-    "categoryId": "cat-fragrance",
-    "name": "GlowUp Blossom Eau de Parfum",
-    "subtitle": "50ml",
+    "categoryId": "cat-haircare",
+    "name": "Kerastase Serum",
+    "subtitle": "90ml",
     "description": "A delicate floral fragrance with notes of cherry blossom, jasmine, and white musk.",
     "price": 1290,
-    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&h=400&fit=crop",
+    "image": "/images/products/haircare/Hair_serum_2.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=600&fit=crop"
+      "/images/products/haircare/Hair_serum_2.jpg"
     ],
     "rating": 4.8,
     "reviewCount": 78,
     "badge": "New",
     "inStock": true,
-    "sizes": ["30ml", "50ml", "100ml"]
+    "sizes": [ "50ml", "90ml"]
   },
   {
     "id": "prod-13",
-    "categoryId": "cat-bodycare",
-    "name": "GlowUp Silk Body Lotion",
+    "categoryId": "cat-haircare",
+    "name": "By Viera",
     "subtitle": "200ml",
-    "description": "Luxurious body lotion with shea butter and rose extract for deeply nourished skin.",
-    "price": 420,
-    "image": "https://images.unsplash.com/photo-1608248543809-3c3d4f4e0a0a?w=400&h=400&fit=crop",
+    "description": "Moisture Shampoo",
+    "price": 280,
+    "image": "/images/products/haircare/Shampoo_2.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1608248543809-3c3d4f4e0a0a?w=600&h=600&fit=crop"
+      "/images/products/haircare/Shampoo_2.jpg"
     ],
     "rating": 4.6,
     "reviewCount": 95,
+    "inStock": true
+  },
+  {
+    "id": "prod-14",
+    "categoryId": "cat-bodycare",
+    "name": "Vaseline",
+    "subtitle": "200ml",
+    "description": "Cocoa Radiant",
+    "price": 300,
+    "image": "/images/products/bodycare/Lotion_1.jpg",
+    "images": [
+      "/images/products/bodycare/Lotion_1.jpg"
+    ],
+    "rating": 4.6,
+    "reviewCount": 95,
+    "inStock": true
+  },
+  {
+    "id": "prod-14",
+    "categoryId": "cat-bodycare",
+    "name": "Dove",
+    "subtitle": "200ml",
+    "description": "Body Scrub",
+    "price": 300,
+    "image": "/images/products/bodycare/Scrub_1.jpg",
+    "images": [
+      "/images/products/bodycare/Scrub_1.jpg"
+    ],
+    "rating": 4.6,
+    "reviewCount": 95,
+    "inStock": true
+  },
+  {
+    "id": "prod-3",
+    "categoryId": "cat-fragrance",
+    "name": "Dior EDP",
+    "subtitle": "Miss Dior Absolutely Blooming",
+    "description": "A luxurious perfume with rich, long-lasting smell from Dior.",
+    "price": 5600,
+    "originalPrice": 5800,
+    "image": "/images/products/fragrance/Perfume_2.jpg",
+    "images": [
+      "/images/products/fragrance/Perfume_2.jpg"
+    ],
+    "rating": 4.7,
+    "reviewCount": 215,
+    "badge": "Sale",
+    "inStock": true
+  },
+  {
+    "id": "prod-3",
+    "categoryId": "cat-fragrance",
+    "name": "Burberry EDP",
+    "subtitle": "Burberry Her",
+    "description": "A luxurious perfume with rich, long-lasting smell from Burberry.",
+    "price": 3200,
+    "originalPrice": 4000,
+    "image": "/images/products/fragrance/Perfume_3.jpg",
+    "images": [
+      "/images/products/fragrance/Perfume_3.jpg"
+    ],
+    "rating": 4.7,
+    "reviewCount": 215,
+    "badge": "Sale",
     "inStock": true
   }
 ]
