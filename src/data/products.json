@@ -1,0 +1,214 @@
+[
+  {
+    "id": "prod-1",
+    "categoryId": "cat-makeup",
+    "name": "GlowUp Velvet Lipstick",
+    "subtitle": "#Coral Crush",
+    "description": "A luxurious velvet-finish lipstick with rich, long-lasting color. Infused with nourishing oils for a comfortable, non-drying wear.",
+    "price": 450,
+    "originalPrice": 590,
+    "image": "https://images.unsplash.com/photo-1586495777744-4413f210eafc?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1586495777744-4413f210eafc?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1630544067507-1c2f8a4a2b0b?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.8,
+    "reviewCount": 132,
+    "badge": "Best Seller",
+    "inStock": true,
+    "shades": ["#Coral Crush", "#Rose Petal", "#Berry Bliss", "#Nude Glow"]
+  },
+  {
+    "id": "prod-2",
+    "categoryId": "cat-makeup",
+    "name": "GlowUp Bloom Eyeshadow Palette",
+    "subtitle": "12 Warm Tones",
+    "description": "A stunning 12-shade palette featuring warm, blendable colors perfect for everyday looks and special occasions.",
+    "price": 790,
+    "image": "https://images.unsplash.com/photo-1512496016851-a16e428a3e3e?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1512496016851-a16e428a3e3e?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.9,
+    "reviewCount": 89,
+    "badge": "New",
+    "inStock": true
+  },
+  {
+    "id": "prod-3",
+    "categoryId": "cat-makeup",
+    "name": "GlowUp Flawless Foundation",
+    "subtitle": "Medium Coverage",
+    "description": "Buildable medium coverage foundation with a natural satin finish. Available in 24 inclusive shades.",
+    "price": 680,
+    "originalPrice": 850,
+    "image": "https://images.unsplash.com/photo-1631214524020-7e1470a4b881?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1631214524020-7e1470a4b881?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.7,
+    "reviewCount": 215,
+    "badge": "Sale",
+    "inStock": true,
+    "shades": ["Ivory", "Beige", "Sand", "Honey", "Caramel", "Espresso"]
+  },
+  {
+    "id": "prod-4",
+    "categoryId": "cat-makeup",
+    "name": "GlowUp Lash Volume Mascara",
+    "subtitle": "Waterproof Black",
+    "description": "Dramatic volume and length without clumping. Smudge-proof formula that lasts all day.",
+    "price": 390,
+    "image": "https://images.unsplash.com/photo-1631730486572-4d6d0f3a2a0b?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1631730486572-4d6d0f3a2a0b?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.6,
+    "reviewCount": 178,
+    "inStock": true
+  },
+  {
+    "id": "prod-5",
+    "categoryId": "cat-makeup",
+    "name": "GlowUp Blush Duo",
+    "subtitle": "Peach & Rose",
+    "description": "Silky powder blush duo with a natural flush of color. Buildable and blendable formula.",
+    "price": 520,
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.5,
+    "reviewCount": 94,
+    "badge": "Best Seller",
+    "inStock": true
+  },
+  {
+    "id": "prod-6",
+    "categoryId": "cat-makeup",
+    "name": "GlowUp Setting Spray",
+    "subtitle": "All Day Hold",
+    "description": "Fine mist setting spray that locks makeup in place for up to 16 hours.",
+    "price": 420,
+    "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.4,
+    "reviewCount": 67,
+    "inStock": true,
+    "sizes": ["50ml", "100ml"]
+  },
+  {
+    "id": "prod-7",
+    "categoryId": "cat-skincare",
+    "name": "GlowUp Hydra Glow Serum",
+    "subtitle": "30ml",
+    "description": "Intensive hydrating serum with hyaluronic acid and vitamin C for radiant, plump skin.",
+    "price": 890,
+    "image": "https://images.unsplash.com/photo-1620916565420-3740845100b6?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1620916565420-3740845100b6?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.9,
+    "reviewCount": 256,
+    "badge": "Best Seller",
+    "inStock": true,
+    "sizes": ["30ml", "50ml"]
+  },
+  {
+    "id": "prod-8",
+    "categoryId": "cat-skincare",
+    "name": "GlowUp Sun Shield SPF 50+",
+    "subtitle": "50ml",
+    "description": "Lightweight, non-greasy sunscreen with broad spectrum SPF 50+ protection.",
+    "price": 590,
+    "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.8,
+    "reviewCount": 189,
+    "inStock": true,
+    "sizes": ["50ml", "100ml"]
+  },
+  {
+    "id": "prod-9",
+    "categoryId": "cat-skincare",
+    "name": "GlowUp Night Repair Cream",
+    "subtitle": "50ml",
+    "description": "Rich overnight cream with retinol and peptides to repair and rejuvenate skin while you sleep.",
+    "price": 950,
+    "originalPrice": 1200,
+    "image": "https://images.unsplash.com/photo-1617897903246-3b5a049e5a8e?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1617897903246-3b5a049e5a8e?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.7,
+    "reviewCount": 143,
+    "badge": "Sale",
+    "inStock": true
+  },
+  {
+    "id": "prod-10",
+    "categoryId": "cat-skincare",
+    "name": "GlowUp Gentle Cleanser",
+    "subtitle": "150ml",
+    "description": "pH-balanced gel cleanser that removes impurities without stripping natural moisture.",
+    "price": 480,
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.6,
+    "reviewCount": 201,
+    "inStock": true
+  },
+  {
+    "id": "prod-11",
+    "categoryId": "cat-haircare",
+    "name": "GlowUp Silk Repair Shampoo",
+    "subtitle": "250ml",
+    "description": "Sulfate-free shampoo with keratin and argan oil for silky, manageable hair.",
+    "price": 380,
+    "image": "https://images.unsplash.com/photo-1535585209827-a15fc090454a?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1535585209827-a15fc090454a?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.5,
+    "reviewCount": 112,
+    "inStock": true
+  },
+  {
+    "id": "prod-12",
+    "categoryId": "cat-fragrance",
+    "name": "GlowUp Blossom Eau de Parfum",
+    "subtitle": "50ml",
+    "description": "A delicate floral fragrance with notes of cherry blossom, jasmine, and white musk.",
+    "price": 1290,
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.8,
+    "reviewCount": 78,
+    "badge": "New",
+    "inStock": true,
+    "sizes": ["30ml", "50ml", "100ml"]
+  },
+  {
+    "id": "prod-13",
+    "categoryId": "cat-bodycare",
+    "name": "GlowUp Silk Body Lotion",
+    "subtitle": "200ml",
+    "description": "Luxurious body lotion with shea butter and rose extract for deeply nourished skin.",
+    "price": 420,
+    "image": "https://images.unsplash.com/photo-1608248543809-3c3d4f4e0a0a?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1608248543809-3c3d4f4e0a0a?w=600&h=600&fit=crop"
+    ],
+    "rating": 4.6,
+    "reviewCount": 95,
+    "inStock": true
+  }
+]

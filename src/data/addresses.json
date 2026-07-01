@@ -1,0 +1,29 @@
+[
+  {
+    "id": "addr-1",
+    "label": "Home",
+    "name": "Khin Yadanar Kyaw",
+    "address": "123 Sukhumvit Road, Khlong Toei, Bangkok 10110, Thailand",
+    "phone": "+66 81 234 5678",
+    "isDefault": true,
+    "icon": "home"
+  },
+  {
+    "id": "addr-2",
+    "label": "Work",
+    "name": "Khin Yadanar Kyaw",
+    "address": "456 Silom Road, Bang Rak, Bangkok 10500, Thailand",
+    "phone": "+66 81 234 5678",
+    "isDefault": false,
+    "icon": "work"
+  },
+  {
+    "id": "addr-3",
+    "label": "Dorm",
+    "name": "Khin Yadanar Kyaw",
+    "address": "789 Rama IV Road, Pathum Wan, Bangkok 10330, Thailand",
+    "phone": "+66 81 234 5678",
+    "isDefault": false,
+    "icon": "dorm"
+  }
+]

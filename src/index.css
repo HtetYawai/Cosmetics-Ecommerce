@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --color-brand: #e94e77;
+  --color-brand-dark: #d43d65;
+  --color-brand-light: #fff0f3;
+  --color-brand-50: #fdf2f8;
+}
+
+body {
+  @apply bg-white font-sans text-gray-900 antialiased;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
